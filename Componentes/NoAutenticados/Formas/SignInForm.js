@@ -3,6 +3,7 @@ import { StyleSheet, Text, View, Button, TextInput, ImagePropTypes } from 'react
 import {Field, reduxForm} from 'redux-form';
 
 const fieldNombre = (props) => {
+    return(
 <View  style= {styles.textInput}>
 <TextInput
  placeholder={props.ph} 
@@ -16,7 +17,7 @@ onBlur= {props.input.onBlur}
  <View style={ styles.linea }/>
  {props.meta.touched && props.meta.error && <Text style= {styles.errors}>{ props.meta.error }</Text>}
  </View>
- };
+    )};
 
 
  const validate = (values)=>{
@@ -41,7 +42,7 @@ const SignInForm = () => {
         <View>
             <Field name= "correo" component={fieldNombre}  ph="Correo@correo.com"/>
             <Field name= "password" component={fieldNombre}  ph="*******" />
-                <Button title="Login" onPress={()=>props.handleSubmit( props.login )} />
+                <Button title="Login" onPress={()=>props.handleSubmit( props.login)} />
         </View>
     );
 }; 
@@ -57,4 +58,4 @@ errors:{
     color: '#FF0000',
 }
 })
-export default reduxForm({form:'SignInForm', validate,})(SignInForm); 
+export default reduxForm({form:'SignInForm', validate})(SignInForm); 

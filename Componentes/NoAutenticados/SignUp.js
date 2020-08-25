@@ -14,9 +14,8 @@ render(){
   const { navigation}= this.props;
   return (
     <View style={styles.container}>
-      <seleccionarImagen/>
       <SignUpForm registro= { this.registroDelUsuario}/>
-      <Button title='SignUp' onPress={()=>{navigation.goBack()}} />
+      <Button title='SignIn' onPress={()=>{navigation.goBack()}} />
     </View>
   );
 };

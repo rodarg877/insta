@@ -12,7 +12,7 @@ class SignIn extends React.Component {
     const { navigation } = this.props;
     return (
       <View style={styles.container}>
-        <SignInForm login={this.signinDelUsuario} />
+        <SignInForm login ={this.signinDelUsuario} />
         <Button title='SignUp' onPress={() => { navigation.navigate('SignUp') }} />
       </View>
     );
