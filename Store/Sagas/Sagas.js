@@ -1,6 +1,6 @@
 import { takeEvery, call } from 'redux-saga/effects';
 import { autenticacion, baseDeDatos } from '../Servicios/Firebase';
-import CONSTANTES from '../CONSTANTES';
+import Constantes from '../Constantes';
 
 
 const registroEnFirebase = (values) => autenticacion
@@ -34,6 +34,6 @@ const loginEnFirebase =({correo, password })=>firebase.auth()
 .then(success=> success.toJSON());
 
 export default function* funcionPrimaria() {
-    yield takeEvery(CONSTANTES.REGISTRO, sagaRegistro)
-    yield takeEvery(CONSTANTES.LOGIN, sagaLogin)
+    yield takeEvery(Constantes.REGISTRO, sagaRegistro)
+    yield takeEvery(Constantes.LOGIN, sagaLogin)
 }

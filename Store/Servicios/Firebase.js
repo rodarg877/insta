@@ -12,7 +12,6 @@ var firebaseConfig = {
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
-  firebase.analytics(); 
 
   export const autenticacion =  firebase.auth(); 
   export const baseDeDatos =  firebase.database(); 

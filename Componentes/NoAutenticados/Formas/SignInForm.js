@@ -10,7 +10,7 @@ const fieldNombre = (props) => {
  value= {props.input.value}
 keyboardType = {props.name === 'correo' ? 'email-address' : 'default' }
 autoCapitalize= 'none'
-secureTextEntry = {!!(props.name === 'password' || props.name === 'confirmacion') }
+secureTextEntry = {!!(props.name === 'password') }
 onBlur= {props.input.onBlur}
  />
  <View style={ styles.linea }/>
@@ -41,7 +41,7 @@ const SignInForm = () => {
         <View>
             <Field name= "correo" component={fieldNombre}  ph="Correo@correo.com"/>
             <Field name= "password" component={fieldNombre}  ph="*******" />
-                <Button title="Login" onPress={props.handleSubmit( props.login )} />
+                <Button title="Login" onPress={()=>props.handleSubmit( props.login )} />
         </View>
     );
 }; 

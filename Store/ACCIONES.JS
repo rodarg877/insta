@@ -1,22 +1,22 @@
-import CONSTANTES from './CONSTANTES'
+import Constantes from './Constantes'
 
 
 export const actionLogin = datos => ({
-    type: CONSTANTES.LOGIN,
+    type: Constantes.LOGIN,
     datos,
 });
 
 export const actionRegistro = values =>({
-    type: CONSTANTES.REGISTRO,
+    type: Constantes.REGISTRO,
     datos: values,
 });
 
 export const actionEstablecerSesion = (usuario) => ({
-    type: CONSTANTES.ESTABLECER_SESION,
+    type: Constantes.ESTABLECER_SESION,
     usuario,
 });
 
 export const actionCerrarSesion = () => ({
-    type: CONSTANTES.CERRAR_SESION,
+    type: Constantes.CERRAR_SESION,
 
 })

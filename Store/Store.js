@@ -2,16 +2,16 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { reducer as form } from 'redux-form';
 import createSagaMiddleware from 'redux-saga';
 import functionPrimaria from './Sagas/Sagas';
-import CONSTANTES from './CONSTANTES';
+import Constantes from './Constantes';
 
 
 const reducersPrueba = (state = [], action) => state;
 
 const reducerSesion = (state = null, action) => {
     switch (action.type) {
-        case CONSTANTES.ESTABLECER_SESION:
+        case Constantes.ESTABLECER_SESION:
             return action.usuario ;
-        case CONSTANTES.CERRAR_SESION:
+        case Constantes.CERRAR_SESION:
             return null;
         default:
             return state;

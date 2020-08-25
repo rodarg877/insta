@@ -2,7 +2,8 @@ import React from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
 import {connect }from 'react-redux';
 import SignUpForm from './Formas/SignUpForm';
-import { actionRegistro } from '../../Store/ACCIONES';
+import { actionRegistro } from '../../Store/Acciones';
+import seleccionarImagen from '../SeleccionarImagen';
 
 
 class SignUp extends React.Component {
@@ -13,6 +14,7 @@ render(){
   const { navigation}= this.props;
   return (
     <View style={styles.container}>
+      <seleccionarImagen/>
       <SignUpForm registro= { this.registroDelUsuario}/>
       <Button title='SignUp' onPress={()=>{navigation.goBack()}} />
     </View>

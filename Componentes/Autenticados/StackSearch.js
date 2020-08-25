@@ -3,9 +3,11 @@ import Search from './Search';
 import Autor from './Profile';
 import Publicacion from './Publicacion';
 import Comentarios from './Comentarios';
+import * as React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 
-
-const StackSearch = StackNavigator({
+/* const StackSearch = StackNavigator({
     Search: {
         screen: Search,
     },
@@ -19,4 +21,23 @@ const StackSearch = StackNavigator({
         screen: Comentarios,
     },
 })
-export { StackSearch };
+export { StackSearch }; */
+
+
+
+
+const  Stack = createStackNavigator();
+
+function StackSearch() {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Search">
+      <Stack.Screen name="Search" component={Search} />
+      <Stack.Screen name="Autor" component={Autor} />
+        <Stack.Screen name="Publicacion" component={Publicacion} />
+        <Stack.Screen name="Comentarios" component={Comentarios} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+}
+export default  StackSearch ;

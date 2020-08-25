@@ -1,10 +1,10 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import { RutasNoAutenticadas } from './Componentes/NoAutenticados/RutasNoAutenticadas';
-import { RutasAutenticadas } from './Componentes/Autenticados/RutasAutenticadas';
+import  RutasNoAutenticadas  from './Componentes/NoAutenticados/RutasNoAutenticadas';
+import  RutasAutenticadas  from './Componentes/Autenticados/RutasAutenticadas';
 import { autenticacion } from './Store/Servicios/Firebase';
 import { connect } from 'react-redux';
-import { actionCerrarSesion, actionEstablecerSesion } from './Store/ACCIONES';
+import { actionCerrarSesion, actionEstablecerSesion } from './Store/Acciones';
 
 class Seleccion extends React.Component {
     componentDidMount(){

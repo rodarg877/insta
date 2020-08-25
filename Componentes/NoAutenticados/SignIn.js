@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
 import SignInForm from './Formas/SignInForm';
-import { actionLogin } from '../../Store/ACCIONES';
+import { actionLogin } from '../../Store/Acciones';
 import { connect } from 'react-redux';
 
 class SignIn extends React.Component {
