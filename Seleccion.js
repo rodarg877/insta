@@ -13,7 +13,7 @@ this.props.autenticacion();
   render() {
     return (
       <View style={styles.container}>
-          {this.props.usuario ? <RutasAutenticadas/> : <RutasNoAutenticadas/> }
+          <RutasAutenticadas/> 
       </View>
     );
   };

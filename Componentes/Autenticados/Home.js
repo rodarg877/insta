@@ -11,7 +11,7 @@ render(){
   return (
     <View style={styles.container}>
       <Button title= 'Autor' onPress= {()=>{navigation.navigate('Autor')}}  />
-      <Button title= 'Comentarios' onPress= {()=>{navigation.navigate('Comentarios ')}}  />
+      <Button title= 'Comentarios' onPress= {()=>{navigation.navigate('Comentarios')}}  />
     </View>
   );
 };

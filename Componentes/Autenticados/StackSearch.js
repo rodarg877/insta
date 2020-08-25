@@ -30,14 +30,12 @@ const  Stack = createStackNavigator();
 
 function StackSearch() {
   return (
-    <NavigationContainer>
       <Stack.Navigator initialRouteName="Search">
       <Stack.Screen name="Search" component={Search} />
       <Stack.Screen name="Autor" component={Autor} />
         <Stack.Screen name="Publicacion" component={Publicacion} />
         <Stack.Screen name="Comentarios" component={Comentarios} />
       </Stack.Navigator>
-    </NavigationContainer>
   );
 }
 export default  StackSearch ;

@@ -29,14 +29,12 @@ const  Stack = createStackNavigator();
 
 function StackHome() {
   return (
-    <NavigationContainer>
       <Stack.Navigator initialRouteName="Home">
       <Stack.Screen name="Home" component={Home} />
       <Stack.Screen name="Autor" component={Autor} />
         <Stack.Screen name="Publicacion" component={Publicacion} />
         <Stack.Screen name="Comentarios" component={Comentarios} />
       </Stack.Navigator>
-    </NavigationContainer>
   );
 }
 export default  StackHome ;

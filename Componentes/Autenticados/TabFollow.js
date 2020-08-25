@@ -25,27 +25,10 @@ const Tab = createMaterialTopTabNavigator();
 
 function TabFollow() {
   return (
-      <NavigationContainer>
-    <Tab.Navigator
-      initialRouteName="Follow"
-      tabBarOptions={{
-        activeTintColor: '#e91e63',
-        labelStyle: { fontSize: 12 },
-        style: { backgroundColor: 'powderblue' },
-      }}
-    >
-      <Tab.Screen
-        name="Follow"
-        component={Follow}
-        options={{ tabBarLabel: 'Follow' }}
-      />
-      <Tab.Screen
-        name="Followers"
-        component={Follow}
-        options={{ tabBarLabel: 'Followers' }}
-      />
-    </Tab.Navigator>
-    </NavigationContainer>
+      <Tab.Navigator initialRouteName="Follow">
+        <Tab.Screen name="Follow" component={Follow} />
+        <Tab.Screen name="Followers" component={Follow} />
+      </Tab.Navigator>
   );
 }
 export default TabFollow;
