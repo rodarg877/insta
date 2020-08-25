@@ -13,6 +13,7 @@ const registroEnBaseDeDatos = (uid, nombre, email) => baseDeDatos.ref(` usuarios
 
 
 function* sagaRegistro(values) {
+    console.log(values);
     try {
         const registro = yield call(registroEnFirebase, values.datos)
         const { email, uid } = registro;
@@ -29,9 +30,9 @@ function* sagaLogin(values){
         console.log (error);
     }
 }
-const loginEnFirebase =({correo, password })=>firebase.auth()
+const loginEnFirebase =({correo, password })=>autenticacion
 .signInWithEmailAndPassword(correo, password)
-.then(success=> success.toJSON());
+.then(success=> success);
 
 export default function* funcionPrimaria() {
     yield takeEvery(Constantes.REGISTRO, sagaRegistro)

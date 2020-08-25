@@ -37,12 +37,12 @@ if(!values.password){
  }
 
 
-const SignInForm = () => {
+const SignInForm = (props) => {
     return(
         <View>
             <Field name= "correo" component={fieldNombre}  ph="Correo@correo.com"/>
             <Field name= "password" component={fieldNombre}  ph="*******" />
-                <Button title="Login" onPress={()=>props.handleSubmit( props.login)} />
+                <Button title="Login" onPress={props.handleSubmit( props.login)} />
         </View>
     );
 }; 
