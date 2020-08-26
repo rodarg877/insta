@@ -6,7 +6,7 @@ export const actionLogin = datos => ({
     datos,
 });
 
-export const actionRegistro = values =>({
+export const actionRegistro = values => ({
     type: Constantes.REGISTRO,
     datos: values,
 });

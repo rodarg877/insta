@@ -23,18 +23,18 @@ function* sagaRegistro(values) {
         console.log(error)
     }
 }
-function* sagaLogin(values){
+function* sagaLogin(values) {
     try {
-        const login =yield call(loginEnFirebase, values.datos)
+        const login = yield call(loginEnFirebase, values.datos)
     } catch (error) {
-        console.log (error);
+        console.log(error);
     }
 }
-const loginEnFirebase =({correo, password })=>autenticacion
-.signInWithEmailAndPassword(correo, password)
-.then(success=> success);
+const loginEnFirebase = ({ correo, password }) => autenticacion
+    .signInWithEmailAndPassword(correo, password)
+    .then(success => success.toJSON());
 
 export default function* funcionPrimaria() {
     yield takeEvery(Constantes.REGISTRO, sagaRegistro)
     yield takeEvery(Constantes.LOGIN, sagaLogin)
-}
+}   

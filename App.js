@@ -15,8 +15,8 @@ class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Provider store= {store}>
-          <Seleccion/>
+        <Provider store={store}>
+          <Seleccion />
         </Provider>
         <StatusBar style="auto" />
       </View>
@@ -29,4 +29,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
   },
 });
+
+
 export default App

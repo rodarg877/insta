@@ -12,7 +12,7 @@ class SignIn extends React.Component {
     const { navigation } = this.props;
     return (
       <View style={styles.container}>
-        <SignInForm login ={this.signinDelUsuario} />
+        <SignInForm login={this.signinDelUsuario} />
         <Button title='SignUp' onPress={() => { navigation.navigate('SignUp') }} />
       </View>
     );
@@ -28,11 +28,13 @@ const styles = StyleSheet.create({
   },
 });
 const mapStateToProps = state => ({
-  prop:state.prop,
+  prop: state.prop,
 })
-const mapDispatchToProps = dispatch =>( {
-      login: (datos) => {
-          dispatch(actionLogin(datos));
-      },
-  });
-  export default connect(mapStateToProps, mapDispatchToProps) (SignIn);
+const mapDispatchToProps = dispatch => ({
+  login: (datos) => {
+    dispatch(actionLogin(datos));
+  },
+});
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(SignIn);

@@ -10,7 +10,7 @@ const reducersPrueba = (state = [], action) => state;
 const reducerSesion = (state = null, action) => {
     switch (action.type) {
         case Constantes.ESTABLECER_SESION:
-            return action.usuario ;
+            return action.usuario;
         case Constantes.CERRAR_SESION:
             return null;
         default:
