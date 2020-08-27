@@ -7,7 +7,7 @@ const registroEnFirebase = (values) => autenticacion
     .createUserWithEmailAndPassword(values.correo, values.password)
     .then(success => success.json());
 
-    const registroEnBaseDeDatos = (uid, nombre, email, fotoUrl) => baseDeDatos.ref(` usuarios/${uid}`).set({
+const registroEnBaseDeDatos = (uid, nombre, email, fotoUrl) => baseDeDatos.ref(` usuarios/${uid}`).set({
     nombre,
     email,
     fotoUrl,
@@ -21,10 +21,10 @@ const registroFotoCloudinary = ({ imagen }) => {
 
     formImagen.append('upload_preset', Constantes.CLOUDINARY_PRESET);
     formImagen.append('file', foto);
-return fetch(Constantes.CLOUDINARY_NAME,{
-    method: 'POST',
-    body: formImagen
-}).then(response => response.json())
+    return fetch(Constantes.CLOUDINARY_NAME, {
+        method: 'POST',
+        body: formImagen
+    }).then(response => response.json())
 };
 
 function* sagaRegistro(values) {
