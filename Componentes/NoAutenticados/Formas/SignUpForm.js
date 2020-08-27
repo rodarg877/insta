@@ -20,9 +20,22 @@ const fieldNombre = (props) => {
     )
 };
 
+const fieldImagen = (props) => {
+    return(
+    <View>
+        <View>
+            {props.meta.touched && props.meta.error && <Text style={styles.errors}>{props.meta.error}</Text>}
+        </View>
+    </View >
+    )
+};
 
-const validate = (values) => {
+const validate = (values, props) => {
     const errors = {};
+    if (!props.imagen) {
+        errors.imagen  = 'La imagen es requerida';
+        console.log("aqui")
+    }
     if (!values.nombre) {
         errors.nombre = 'requerido';
     } else if (values.nombre.length < 5) {
@@ -70,6 +83,7 @@ const styles = StyleSheet.create({
 const SignUpForm = (props) => {
     return (
         <View style={styles.container}>
+            <Field name="imagen" component={fieldImagen} />
             <Field name="nombre" component={fieldNombre} ph="Nombre" />
             <Field name="correo" component={fieldNombre} ph="Correo@correo.com" />
             <Field name="password" component={fieldNombre} ph="*******" />

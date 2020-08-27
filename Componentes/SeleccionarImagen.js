@@ -1,38 +1,10 @@
 import * as React from 'react';
-import { Button, Image, View } from 'react-native';
-import Constants from 'expo-constants';
-import * as Permissions from 'expo-permissions';
+import {  Image, View } from 'react-native';
+import * as ImagePicker from 'expo-image-picker';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
-export default class seleccionarImagen extends React.Component {
-  state = {
-    image: null,
-  };
-
-  render() {
-    let { image } = this.state;
-
-    return (
-      <View style={{ flex: 2, alignItems: 'center', justifyContent: 'center' }}>
-        <Button title="Pick an image from camera roll" onPress={this._pickImage} />
-        {image && <Image source={{ uri: image }} style={{ width: 200, height: 200 }} />}
-      </View>
-    );
-  }
-
-  componentDidMount() {
-    this.getPermissionAsync();
-  }
-
-  getPermissionAsync = async () => {
-    if (Constants.platform.ios) {
-      const { status } = await Permissions.askAsync(Permissions.CAMERA_ROLL);
-      if (status !== 'granted') {
-        alert('Sorry, we need camera roll permissions to make this work!');
-      }
-    }
-  };
-
-  _pickImage = async () => {
+const SeleccionarImagen=(props) =>{
+ const   seleccionarImagen = async () => {
     try {
       let result = await ImagePicker.launchImageLibraryAsync({
         mediaTypes: ImagePicker.MediaTypeOptions.All,
@@ -41,7 +13,7 @@ export default class seleccionarImagen extends React.Component {
         quality: 1,
       });
       if (!result.cancelled) {
-        this.setState({ image: result.uri });
+        props.cargar(result);
       }
 
       console.log(result);
@@ -49,4 +21,24 @@ export default class seleccionarImagen extends React.Component {
       console.log(E);
     }
   };
-}
+  return (
+      <View style={{ flex: 2, alignItems: 'center', justifyContent: 'center' }}>
+        <TouchableOpacity onPress={seleccionarImagen}>
+          {
+            props.imagen ?
+              <Image source={{uri: props.imagen.uri }}
+                style={{ width: 160, height: 160, borderRadius: 80 }}
+              /> :
+              <Image source={require('../assets/foto.jpg')}
+                style={{ width: 160, height: 160, borderRadius: 80 }}
+              />
+          }
+        </TouchableOpacity>
+      </View>
+    );
+  }
+  export default SeleccionarImagen;
+
+  
+
+  

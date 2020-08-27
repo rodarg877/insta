@@ -19,4 +19,13 @@ export const actionEstablecerSesion = (usuario) => ({
 export const actionCerrarSesion = () => ({
     type: Constantes.CERRAR_SESION,
 
-})
+});
+
+export const actionCargarImagen = (imagen) => ({
+    type: Constantes.CARGAR_IMAGEN_SIGNUP,
+    imagen,
+});
+
+export const actionLimpiarImagen = () => ({
+    type: Constantes.LIMPIAR_IMAGEN_SIGNUP,
+});
