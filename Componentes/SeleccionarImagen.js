@@ -16,7 +16,6 @@ const SeleccionarImagen=(props) =>{
         props.cargar(result);
       }
 
-      console.log(result);
     } catch (E) {
       console.log(E);
     }

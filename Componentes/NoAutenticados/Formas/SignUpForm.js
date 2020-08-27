@@ -34,7 +34,6 @@ const validate = (values, props) => {
     const errors = {};
     if (!props.imagen) {
         errors.imagen  = 'La imagen es requerida';
-        console.log("aqui")
     }
     if (!values.nombre) {
         errors.nombre = 'requerido';
